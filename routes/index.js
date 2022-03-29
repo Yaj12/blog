@@ -6,7 +6,7 @@ const userController = require('../controllers/userController');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('/article');
+  res.redirect('/article');
 });
 router.get('/article/add', articleController.renderAddForm);
 router.post('/article/add', articleController.addArticle);
@@ -24,4 +24,5 @@ router.get('/register', userController.renderRegistrationForm);
 router.post('/register', userController.register);
 router.get('/login', userController.renderLogin);
 router.post('/login', userController.login);
+router.get('/logout', userController.logout);
 module.exports = router;
